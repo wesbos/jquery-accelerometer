@@ -11,11 +11,7 @@ jQuery.event.special.acc = {
     setup: function(data, namespaces) {
         console.log('setup');
         var elem = this, $elem = jQuery(elem);
-        $elem.bind('deviceorientation',  jQuery.event.special.acc.handler);
-        $elem.bind('MozOrientation',  jQuery.event.special.acc.handler);
-        $elem.bind('devicemotion',  jQuery.event.special.acc.handler);
-        $elem.bind('acceleration',  jQuery.event.special.acc.handler);
-        $elem.bind('mozorientation',  jQuery.event.special.acc.handler);
+        $elem.bind('deviceorientation MozOrientation devicemotion',  jQuery.event.special.acc.handler);
     },
     teardown: function(namespaces) {
         console.log('teardown');
